@@ -1,0 +1,10 @@
+query {
+    db_findManyTask {
+      id,
+      title,
+      content,
+      status,
+      createdAt,
+      updatedAt
+    }
+}
