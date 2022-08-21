@@ -119,8 +119,6 @@ const MiniCard: FC<IMiniTask> = ({ task, openFormForUpdate, refetch }) => {
 };
 
 const Card: FC<ITask> = ({ tasks, status, openFormForUpdate, refetch }) => {
-  console.log("testing this");
-  console.log(tasks);
 
   return (
     <div className="container bg-sky-800 w-96 md:w-80 xl:w-96 rounded-lg ">

@@ -18,8 +18,6 @@ interface IToggleForm {
 }
 
 const AddForm: FC<IToggleForm> = ({open, toggleForm, data, refetch}) => {
-    
-  console.log("In AddForm...");
   const [title, setTitle] = useState(data.title);
   const [content, setContent] = useState(data.content);
   const [status, setStatus] = useState(data.status);
@@ -27,7 +25,6 @@ const AddForm: FC<IToggleForm> = ({open, toggleForm, data, refetch}) => {
   const {mutate, result} = useMutation.CreateTask();
   const {mutate: update, result: output} = useMutation.UpdateTask();
 
-  console.log(data);
   useEffect(()=> {
     setTitle(data.title);
     setContent(data.content);
@@ -37,7 +34,6 @@ const AddForm: FC<IToggleForm> = ({open, toggleForm, data, refetch}) => {
 
   function handleSubmit(event){
     event.preventDefault();
-    console.log("submitting ... ");
     if(title.length == 0 || content.length == 0)
         alert("Please provide required fields");
     if(data.id == 0){
@@ -60,8 +56,8 @@ const AddForm: FC<IToggleForm> = ({open, toggleForm, data, refetch}) => {
         
     setTitle("");
     setContent("");
-    refetch();
     toggleForm(false);
+    refetch();
   }
 
   return (

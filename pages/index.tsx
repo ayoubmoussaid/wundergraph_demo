@@ -4,8 +4,8 @@ import AddForm from "../components/demo/AddForm";
 import Card from "../components/demo/Card";
 import { useQuery, withWunderGraph } from "../components/generated/nextjs";
 
-const Home: NextPage = () => {
 
+const Home: NextPage = () => {
   var tmp = {
     id: 0,
     title: "Title",
@@ -19,8 +19,7 @@ const Home: NextPage = () => {
   const [open, toggleAddForm] = useState(false);
   const [data, setData] = useState(tmp);
 
-
-
+  
   function openFormForUpdate(info){
     setData(info);
     toggleAddForm(true);
@@ -74,7 +73,10 @@ const Home: NextPage = () => {
         )}
       </div>
       <div className="flex items-center justify-center my-6">
-        <button className="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded" onClick={()=> openFormForUpdate(tmp)}> 
+        <button className="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 mx-2 rounded" onClick={()=> refetch()}> 
+          Refresh
+        </button>
+        <button className="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 mx-2 rounded" onClick={()=> openFormForUpdate(tmp)}> 
         Add a new task
         </button>
       </div>
