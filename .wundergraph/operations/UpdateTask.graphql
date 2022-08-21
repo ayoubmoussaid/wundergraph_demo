@@ -1,8 +1,8 @@
 mutation (
     $id: Int!
     $title: db_StringFieldUpdateOperationsInput
-    $content: db_NullableStringFieldUpdateOperationsInput
-    $status: db_NullableStringFieldUpdateOperationsInput
+    $content: db_StringFieldUpdateOperationsInput
+    $status: db_StringFieldUpdateOperationsInput
 ){
     db_updateOneTask(where: {id: $id}, data: {title: $title, content: $content, status: $status}){
         id

@@ -13,8 +13,8 @@ export interface DeleteTaskInput {
 export interface UpdateTaskInput {
 	id: number;
 	title?: db_StringFieldUpdateOperationsInput;
-	content?: db_NullableStringFieldUpdateOperationsInput;
-	status?: db_NullableStringFieldUpdateOperationsInput;
+	content?: db_StringFieldUpdateOperationsInput;
+	status?: db_StringFieldUpdateOperationsInput;
 }
 
 export interface CreateTaskResponse {
@@ -58,8 +58,8 @@ export interface GetTasksResponseData {
 	db_findManyTask: {
 		id: number;
 		title: string;
-		content?: string;
-		status?: string;
+		content: string;
+		status: string;
 		createdAt: string;
 		updatedAt: string;
 	}[];
@@ -73,16 +73,12 @@ export interface UpdateTaskResponseData {
 	db_updateOneTask?: {
 		id: number;
 		title: string;
-		content?: string;
-		status?: string;
+		content: string;
+		status: string;
 	};
 }
 
 export interface db_StringFieldUpdateOperationsInput {
-	set?: string;
-}
-
-export interface db_NullableStringFieldUpdateOperationsInput {
 	set?: string;
 }
 
